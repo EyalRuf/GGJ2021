@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 8403373348501270770}
   - component: {fileID: 8403373348501270772}
   - component: {fileID: 7181476565197961683}
+  - component: {fileID: 127407808}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -222,7 +223,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.14992905, y: -0.1499291}
+  m_Offset: {x: 0.11198783, y: -0.16682702}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -233,7 +234,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0401134, y: 0.7402545}
+  m_Size: {x: 1.0739093, y: 0.9092337}
   m_EdgeRadius: 0
 --- !u!50 &8403373348501270770
 Rigidbody2D:
@@ -270,7 +271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 1778541641406339639}
   camera: {fileID: 0}
-  collider: {fileID: 8403373348501270771}
+  pi: {fileID: 7181476565197961683}
+  locked: 0
   rb: {fileID: 8403373348501270770}
   speed: 15
   jumpForce: 15
@@ -282,6 +284,10 @@ MonoBehaviour:
   fontWallCheck: {fileID: 2024649827}
   wallSlidingSpeed: 0
   ceilingCheck: {fileID: 209423193}
+  isBumped: 0
+  bumpSpeed: 5.5
+  jumpDownScale: 1.75
+  sizeDownScale: 0.125
 --- !u!114 &7181476565197961683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 8403373348501270772}
+  ph: {fileID: 127407808}
+  isChoosingRespawnPoint: 0
+  HP: 4
   maxImprints: 4
   imprintPrefab: {fileID: 788769715629907434, guid: ad1d35f3fed3a9044b078de1491989d9,
     type: 3}
@@ -305,10 +314,48 @@ MonoBehaviour:
   imprint3: {fileID: 0}
   imprint4: {fileID: 0}
   pressedReturnToImprint: 0
-  imprint1UI: {fileID: 0}
-  imprint2UI: {fileID: 0}
-  imprint3UI: {fileID: 0}
-  imprint4UI: {fileID: 0}
+  isImp1Dead: 0
+  isImp2Dead: 0
+  isImp3Dead: 0
+  isImp4Dead: 0
+  imprint1UIImage: {fileID: 0}
+  imprint2UIImage: {fileID: 0}
+  imprint3UIImage: {fileID: 0}
+  imprint4UIImage: {fileID: 0}
+  imprint1UI_GO: {fileID: 0}
+  imprint2UI_GO: {fileID: 0}
+  imprint3UI_GO: {fileID: 0}
+  imprint4UI_GO: {fileID: 0}
   imprintOnColor: {r: 0.68235296, g: 1, b: 0.29803923, a: 1}
   imprintOffColor: {r: 0.68235296, g: 1, b: 0.29803923, a: 0.47058824}
   imprintTeleportColor: {r: 1, g: 0.99519116, b: 0.3160377, a: 1}
+  go_pb1: {fileID: 0}
+  pb1: {fileID: 0}
+  heldTime1: 0
+  spawnKeyUp1: 0
+  go_pb2: {fileID: 0}
+  pb2: {fileID: 0}
+  heldTime2: 0
+  spawnKeyUp2: 0
+  go_pb3: {fileID: 0}
+  pb3: {fileID: 0}
+  heldTime3: 0
+  spawnKeyUp3: 0
+  go_pb4: {fileID: 0}
+  pb4: {fileID: 0}
+  heldTime4: 0
+  spawnKeyUp4: 0
+--- !u!114 &127407808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8403373348501270735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c667269cad6c74f8c0647bc1f949d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pi: {fileID: 7181476565197961683}
+  pm: {fileID: 8403373348501270772}
