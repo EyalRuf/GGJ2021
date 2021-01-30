@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Imprint
   layers:
   - Default
   - TransparentFX
@@ -13,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Imprints
+  - Ground
   - 
   - 
   - 
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 1576501931
+    locked: 0
+  - name: FG
+    uniqueID: 1438072025
+    locked: 0
+  - name: Player
+    uniqueID: 1604891237
+    locked: 0
+  - name: UI
+    uniqueID: 812983951
     locked: 0
