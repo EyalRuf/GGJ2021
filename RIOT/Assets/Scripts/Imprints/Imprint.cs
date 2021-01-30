@@ -3,15 +3,12 @@ using System.Collections;
 
 public class Imprint : MonoBehaviour
 {
-    // Use this for initialization
-    void Start()
+    public SpriteRenderer sprite;
+
+    public void SetTransforms(Vector3 pos, Quaternion rot, Vector3 scale)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        transform.position = pos;
+        transform.localScale = scale;
+        sprite.transform.rotation = rot;
     }
 }
