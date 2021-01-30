@@ -25,7 +25,6 @@ public class PlayerAnimations : MonoBehaviour
     public void TriggerJump()
     {
         anim.SetTrigger(PARAM_NAME_jump);
-        Debug.Log("jump");
     }
 
     public void TriggerBump()
@@ -36,7 +35,6 @@ public class PlayerAnimations : MonoBehaviour
     public void ResetTriggerJump()
     {
         anim.ResetTrigger(PARAM_NAME_bumpT);
-        Debug.Log("jumpreset");
     }
 
     public void ResetTriggerBump()

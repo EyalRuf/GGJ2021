@@ -5520,5 +5520,10 @@ PrefabInstance:
       propertyPath: checkRadius
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 8403373348501270772, guid: 5565b5131cd54a24999757445f334057,
+        type: 3}
+      propertyPath: jumpDownScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5565b5131cd54a24999757445f334057, type: 3}
