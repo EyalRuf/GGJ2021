@@ -7,28 +7,31 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer sprite;
     public Camera camera;
     public PlayerImprints pi;
+    public PlayerAnimations pa;
 
     [Header("Movement")]
     public bool locked;
     public Rigidbody2D rb;
     public float speed;
-    float hInput;
+    public float hInput;
+    public bool isFalling;
 
     [Header("Jump")]
     public float jumpForce;
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask groundLayers;
-    bool isGrounded;
+    public bool isGrounded;
+    public bool justJumped;
 
     [Header("Walls")]
     public Transform fontWallCheck;
     public float wallSlidingSpeed;
     bool isTouchingWall;
-    bool isWallSliding;
+    public bool isWallSliding;
     public Transform ceilingCheck;
     bool isTouchingCeiling;
-    bool isAttachCeiling;
+    public bool isAttachCeiling;
 
     [Header("Bump")]
     public bool isBumped;
@@ -113,13 +116,27 @@ public class PlayerMovement : MonoBehaviour
                 sprite.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
+            isFalling = !isGrounded && !isWallSliding && !isAttachCeiling && rb.velocity.y < 0.3f;
             transform.localScale = new Vector3(hInput > 0 ? -1 : hInput < 0 ? 1 : transform.localScale.x, 1, 1);
         }
     }
 
     void Jump ()
     {
-        rb.velocity = Vector2.up * jumpForce;
+        if (!justJumped)
+        {
+            rb.velocity = Vector2.up * jumpForce;
+            justJumped = true;
+            pa.TriggerJump();
+            StartCoroutine(resetJumpAnim());
+        }
+    }
+
+    IEnumerator resetJumpAnim()
+    {
+        yield return new WaitForSeconds(0.15f);
+        justJumped = false;
+        pa.ResetTriggerJump();
     }
 
     public void SetTransforms(Vector3 pos, Quaternion rot, Vector3 scale)
@@ -149,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = dir * bumpSpeed;
         isBumped = true;
+        pa.TriggerBump();
         StartCoroutine(Unbump());
     }
 
@@ -156,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         isBumped = false;
+        pa.ResetTriggerBump();
     }
 
     public void UpdateStatsBasedOnHPAndImprints()
