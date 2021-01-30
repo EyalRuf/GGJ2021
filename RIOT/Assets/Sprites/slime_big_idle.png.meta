@@ -1,52 +1,40 @@
 fileFormatVersion: 2
-guid: 7a82ad33337cdf140915aa244703be97
+guid: 574e5cd382745614c93baeecd060f892
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2206018571930997956
-    second: Slimy mc anim walk newest_0
+      213: 817459970684433244
+    second: big_idle_0
   - first:
-      213: 1134202259379502316
-    second: Slimy mc anim walk newest_1
+      213: -7494601694824047551
+    second: big_idle_1
   - first:
-      213: 5020387654215825916
-    second: Slimy mc anim walk newest_2
+      213: 4611376677600848188
+    second: big_idle_2
   - first:
-      213: -8923629807480414523
-    second: Slimy mc anim walk newest_3
+      213: 9061002320410279459
+    second: big_idle_3
   - first:
-      213: -5001566056843886351
-    second: Slimy mc anim walk newest_4
+      213: -6478681033105994062
+    second: big_idle_4
   - first:
-      213: 7976530921931743310
-    second: Slimy mc anim walk newest_5
+      213: -5188925853069378047
+    second: big_idle_5
   - first:
-      213: 8141114311656013720
-    second: Slimy mc anim walk newest_6
+      213: -7115298623491401544
+    second: big_idle_6
   - first:
-      213: 8681357202254209880
-    second: Slimy mc anim walk newest_7
+      213: -7883552121702837297
+    second: big_idle_7
   - first:
-      213: -8659703830859931750
-    second: Slimy mc anim walk newest_8
+      213: -6185866120270123162
+    second: big_idle_8
   - first:
-      213: 1516945580013471057
-    second: Slimy mc anim walk newest_9
+      213: -5778561536786804754
+    second: big_idle_9
   - first:
-      213: -611637399492403937
-    second: Slimy mc anim walk newest_10
-  - first:
-      213: 2226898950071669144
-    second: Slimy mc anim walk newest_11
-  - first:
-      213: 1819798662322566720
-    second: Slimy mc anim walk newest_12
-  - first:
-      213: -298771801621533110
-    second: Slimy mc anim walk newest_13
-  - first:
-      213: -1151895326799763324
-    second: Slimy mc anim walk newest_14
+      213: -722774129884935144
+    second: big_idle_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -156,13 +144,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_0
+      name: big_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3b632cfbc5a261e0800000000000000
-      internalID: -2206018571930997956
+      spriteID: c533fb22383385b00800000000000000
+      internalID: 817459970684433244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_1
+      name: big_idle_1
       rect:
         serializedVersion: 2
-        x: 258
+        x: 256
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cecb2c512fe7dbf00800000000000000
-      internalID: 1134202259379502316
+      spriteID: 14cd8f67773ddf790800000000000000
+      internalID: -7494601694824047551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_2
+      name: big_idle_2
       rect:
         serializedVersion: 2
-        x: 516
+        x: 512
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf97a4ce8fffba540800000000000000
-      internalID: 5020387654215825916
+      spriteID: c396be9f7a6eeff30800000000000000
+      internalID: 4611376677600848188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_3
+      name: big_idle_3
       rect:
         serializedVersion: 2
-        x: 774
+        x: 768
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ceda0238f5e82480800000000000000
-      internalID: -8923629807480414523
+      spriteID: 32e7b096a952fbd70800000000000000
+      internalID: 9061002320410279459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_4
+      name: big_idle_4
       rect:
         serializedVersion: 2
-        x: 1032
+        x: 1024
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f04b25bb2ed69ab0800000000000000
-      internalID: -5001566056843886351
+      spriteID: 2be08a80de91716a0800000000000000
+      internalID: -6478681033105994062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_5
+      name: big_idle_5
       rect:
         serializedVersion: 2
-        x: 1290
+        x: 1280
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4029adac9452be60800000000000000
-      internalID: 7976530921931743310
+      spriteID: 10e75f1cd6b3df7b0800000000000000
+      internalID: -5188925853069378047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_6
+      name: big_idle_6
       rect:
         serializedVersion: 2
-        x: 1548
+        x: 1536
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89ffa1e355c0bf070800000000000000
-      internalID: 8141114311656013720
+      spriteID: 8b818f3b991614d90800000000000000
+      internalID: -7115298623491401544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_7
+      name: big_idle_7
       rect:
         serializedVersion: 2
-        x: 1806
+        x: 1792
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85324a031606a7870800000000000000
-      internalID: 8681357202254209880
+      spriteID: fc310a93d1ff79290800000000000000
+      internalID: -7883552121702837297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_8
+      name: big_idle_8
       rect:
         serializedVersion: 2
-        x: 2064
+        x: 2048
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9f11853f3d82d780800000000000000
-      internalID: -8659703830859931750
+      spriteID: 66fec29a983672aa0800000000000000
+      internalID: -6185866120270123162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_9
+      name: big_idle_9
       rect:
         serializedVersion: 2
-        x: 2322
+        x: 2304
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,20 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1554d48c7f54d0510800000000000000
-      internalID: 1516945580013471057
+      spriteID: eef461ff5ec6ecfa0800000000000000
+      internalID: -5778561536786804754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slimy mc anim walk newest_10
+      name: big_idle_10
       rect:
         serializedVersion: 2
-        x: 2580
+        x: 2560
         y: 0
-        width: 258
-        height: 206
+        width: 256
+        height: 198
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,92 +368,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1d59e796070387f0800000000000000
-      internalID: -611637399492403937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slimy mc anim walk newest_11
-      rect:
-        serializedVersion: 2
-        x: 2838
-        y: 0
-        width: 258
-        height: 206
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89156b5ebc887ee10800000000000000
-      internalID: 2226898950071669144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slimy mc anim walk newest_12
-      rect:
-        serializedVersion: 2
-        x: 3096
-        y: 0
-        width: 258
-        height: 206
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 046b77edd39314910800000000000000
-      internalID: 1819798662322566720
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slimy mc anim walk newest_13
-      rect:
-        serializedVersion: 2
-        x: 3354
-        y: 0
-        width: 258
-        height: 206
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4ee17f11ac8adbf0800000000000000
-      internalID: -298771801621533110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slimy mc anim walk newest_14
-      rect:
-        serializedVersion: 2
-        x: 3612
-        y: 0
-        width: 258
-        height: 206
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 488eaa3ad45a300f0800000000000000
-      internalID: -1151895326799763324
+      spriteID: 81ccd5f12c038f5f0800000000000000
+      internalID: -722774129884935144
       vertices: []
       indices: 
       edges: []
