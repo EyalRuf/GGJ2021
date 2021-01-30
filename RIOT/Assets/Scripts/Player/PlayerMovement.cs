@@ -107,13 +107,13 @@ public class PlayerMovement : MonoBehaviour
                 sprite.transform.rotation = Quaternion.Euler(180, 0, 0);
             } else if (isWallSliding)
             {
-                sprite.transform.rotation = Quaternion.Euler(0, 0, 90 * transform.localScale.x);
+                sprite.transform.rotation = Quaternion.Euler(0, 0, -90 * transform.localScale.x);
             } else
             {
                 sprite.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
-            transform.localScale = new Vector3(hInput > 0 ? 1 : hInput < 0 ? -1 : transform.localScale.x, 1, 1);
+            transform.localScale = new Vector3(hInput > 0 ? -1 : hInput < 0 ? 1 : transform.localScale.x, 1, 1);
         }
     }
 

@@ -11,8 +11,10 @@ public class PlayerImprints : MonoBehaviour
     public int HP = 4;
 
     [Header("Imprints")]
-    public int maxImprints;
-    public GameObject imprintPrefab;
+    public GameObject imprint1Prefab;
+    public GameObject imprint2Prefab;
+    public GameObject imprint3Prefab;
+    public GameObject imprint4Prefab;
     public float spawnImprintCD;
     public bool canImprint;
 
@@ -127,7 +129,7 @@ public class PlayerImprints : MonoBehaviour
                 if (imprint1 == null && canImprint)
                 {
                     imprint1UIImage.color = imprintOnColor;
-                    SpawnImprint(out imprint1);
+                    SpawnImprint(out imprint1, imprint1Prefab);
                     spawnKeyUp1 = false;
                 }
             } 
@@ -171,7 +173,7 @@ public class PlayerImprints : MonoBehaviour
                 if (imprint2 == null && canImprint)
                 {
                     imprint2UIImage.color = imprintOnColor;
-                    SpawnImprint(out imprint2);
+                    SpawnImprint(out imprint2, imprint2Prefab);
                     spawnKeyUp2 = false;
                 }
             }
@@ -215,7 +217,7 @@ public class PlayerImprints : MonoBehaviour
                 if (imprint3 == null && canImprint)
                 {
                     imprint3UIImage.color = imprintOnColor;
-                    SpawnImprint(out imprint3);
+                    SpawnImprint(out imprint3, imprint3Prefab);
                     spawnKeyUp3 = false;
                 }
             }
@@ -259,7 +261,7 @@ public class PlayerImprints : MonoBehaviour
                 if (imprint4 == null && canImprint)
                 {
                     imprint4UIImage.color = imprintOnColor;
-                    SpawnImprint(out imprint4);
+                    SpawnImprint(out imprint4, imprint4Prefab);
                     spawnKeyUp4 = false;
                 }
             }
@@ -297,9 +299,9 @@ public class PlayerImprints : MonoBehaviour
         }
     }
 
-    void SpawnImprint(out GameObject imprint)
+    void SpawnImprint(out GameObject imprint, GameObject prefab)
     {
-        imprint = Instantiate(imprintPrefab);
+        imprint = Instantiate(prefab);
         imprint.GetComponent<Imprint>().SetTransforms(pm.transform.position, pm.sprite.transform.rotation, pm.transform.localScale);
 
         pm.UpdateStatsBasedOnHPAndImprints();
