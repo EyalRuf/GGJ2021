@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
         {
             if (pi.HP == 0)
             {
-                Debug.Log("game over");
+                SceneManager.LoadScene("Lose", LoadSceneMode.Single);
             } else
             {
                 // bump?
@@ -25,14 +26,18 @@ public class PlayerHealth : MonoBehaviour
                 }
             }
         }
-        if (collision.tag == "Slime")
+        else if (collision.tag == "Slime")
         {
             if (pi.HP < 4)
             {
                 pi.Heal();
                 Destroy(collision.gameObject);
             }
-        }   
+        }
+        else if (collision.tag == "End")
+        {
+            SceneManager.LoadScene("Win", LoadSceneMode.Single);
+        }
     }
 
     public void EndDamageSequence()
