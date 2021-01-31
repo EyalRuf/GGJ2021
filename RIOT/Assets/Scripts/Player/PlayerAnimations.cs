@@ -16,7 +16,7 @@ public class PlayerAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetBool(PARAM_NAME_isMoving, pm.hInput != 0);
+        anim.SetBool(PARAM_NAME_isMoving, pm.isWalking);
         anim.SetBool(PARAM_NAME_grounded, !pm.justJumped && (pm.isGrounded || pm.isWallSliding || pm.isAttachCeiling));
         anim.SetBool(PARAM_NAME_bump, pm.isBumped);
         anim.SetBool(PARAM_NAME_falling, pm.isFalling);

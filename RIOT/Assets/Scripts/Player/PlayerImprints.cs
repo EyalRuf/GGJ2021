@@ -7,6 +7,7 @@ public class PlayerImprints : MonoBehaviour
 {
     public PlayerMovement pm;
     public PlayerHealth ph;
+    public PlayerAudio pAudio;
     public bool isChoosingRespawnPoint;
     public int HP = 4;
 
@@ -152,6 +153,7 @@ public class PlayerImprints : MonoBehaviour
                         imprint1UIImage.color = imprintOffColor;
                         imprint1 = null;
                         pm.UpdateStatsBasedOnHPAndImprints();
+                        pAudio.PoopSound();
 
                         heldTime1 = 0;
                         pb1.curr = 0;
@@ -197,6 +199,7 @@ public class PlayerImprints : MonoBehaviour
                         imprint2UIImage.color = imprintOffColor;
                         imprint2 = null;
                         pm.UpdateStatsBasedOnHPAndImprints();
+                        pAudio.PoopSound();
 
                         heldTime2 = 0;
                         pb2.curr = 0;
@@ -242,6 +245,7 @@ public class PlayerImprints : MonoBehaviour
                         imprint3UIImage.color = imprintOffColor;
                         imprint3 = null;
                         pm.UpdateStatsBasedOnHPAndImprints();
+                        pAudio.PoopSound();
 
                         heldTime3 = 0;
                         pb3.curr = 0;
@@ -287,6 +291,7 @@ public class PlayerImprints : MonoBehaviour
                         imprint4UIImage.color = imprintOffColor;
                         imprint4 = null;
                         pm.UpdateStatsBasedOnHPAndImprints();
+                        pAudio.PoopSound();
 
                         heldTime4 = 0;
                         pb4.curr = 0;
@@ -308,6 +313,7 @@ public class PlayerImprints : MonoBehaviour
         imprint = Instantiate(prefab);
         imprint.GetComponent<Imprint>().SetTransforms(pm.transform.position, pm.sprite.transform.rotation, pm.transform.localScale);
 
+        pAudio.PoopSound();
         pm.UpdateStatsBasedOnHPAndImprints();
         canImprint = false;
         StartCoroutine(ImprintCD());
@@ -357,6 +363,7 @@ public class PlayerImprints : MonoBehaviour
     void TeleportToImprint(Imprint imprint)
     {
         pm.SetTransforms(imprint.transform.position, imprint.sprite.transform.rotation, imprint.transform.localScale);
+        pAudio.TPSound();
 
         if (imprint1 == imprint.gameObject)
         {
@@ -474,6 +481,7 @@ public class PlayerImprints : MonoBehaviour
     public void Heal()
     {
         HP++;
+
         if (isImp1Dead)
         {
             imprint1UIImage.color = imprintOffColor;
@@ -503,6 +511,7 @@ public class PlayerImprints : MonoBehaviour
             imprint4UI_GO.SetActive(true);
         }
 
+        pAudio.PoopSound();
         pm.UpdateStatsBasedOnHPAndImprints();
     }
 }

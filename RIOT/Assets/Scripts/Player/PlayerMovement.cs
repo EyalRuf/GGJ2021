@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera camera;
     public PlayerImprints pi;
     public PlayerAnimations pa;
+    public PlayerAudio pAudio;
 
     [Header("Movement")]
     public bool locked;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float hInput;
     public bool isFalling;
+    public bool isWalking;
 
     [Header("Jump")]
     public float jumpForce;
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Scaling")]
     public float jumpDownScale;
     public float sizeDownScale;
-    Vector3 originalSpriteScale;
+    Vector3 ogScale;
     float originalJumpForce;
 
     [Header("Checks")]
@@ -50,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        originalSpriteScale = new Vector3(sprite.transform.localScale.x, sprite.transform.localScale.y, sprite.transform.localScale.z);
+        ogScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
         originalJumpForce = jumpForce;
     }
 
@@ -119,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             isFalling = !isGrounded && !isWallSliding && !isAttachCeiling && rb.velocity.y < 0.3f;
+            isWalking = ((isGrounded || isAttachCeiling) && hInput != 0) || isWallSliding;
             transform.localScale = 
                 new Vector3(hInput > 0 ? -Mathf.Abs(transform.localScale.x) : hInput < 0 ? Mathf.Abs(transform.localScale.x) : transform.localScale.x, 
                 transform.localScale.y, 
@@ -135,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = Vector2.up * jumpForce;
                 justJumped = true;
                 pa.TriggerJump();
+                pAudio.JumpSound();
             } else
             {
                 rb.velocity = Vector2.up * (jumpForce / 1.5f);
@@ -178,6 +182,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = dir * bumpSpeed;
         isBumped = true;
         pa.TriggerBump();
+        pAudio.HitSound();
         StartCoroutine(Unbump());
     }
 
@@ -194,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
         float scaleDown = 1 - (sizeDownScale * multiplyer);
         float jumpDown = jumpDownScale * multiplyer;
 
-        transform.localScale = originalSpriteScale * scaleDown;
+        transform.localScale = new Vector3(ogScale.x * scaleDown * Mathf.Sign(transform.localScale.x), ogScale.y * scaleDown, ogScale.z * scaleDown);
         jumpForce = originalJumpForce - jumpDown;
     }
 }
