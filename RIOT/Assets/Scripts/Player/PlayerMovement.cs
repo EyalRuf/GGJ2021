@@ -80,9 +80,9 @@ public class PlayerMovement : MonoBehaviour
         { 
             hInput = Input.GetAxis("Horizontal");
 
-            isGrounded = Physics2D.OverlapBox(groundCheck.position, groundSquareCheck, 0, groundLayers) != null;
-            isTouchingWall = Physics2D.OverlapBox(fontWallCheck.position, wallSquareCheck, 0, groundLayers) != null;
-            isTouchingCeiling = Physics2D.OverlapBox(ceilingCheck.position, ceilingSquareCheck, 0, groundLayers) != null;
+            isGrounded = Physics2D.OverlapBox(groundCheck.position, groundSquareCheck * transform.localScale.y, 0, groundLayers) != null;
+            isTouchingWall = Physics2D.OverlapBox(fontWallCheck.position, wallSquareCheck * transform.localScale.y, 0, groundLayers) != null;
+            isTouchingCeiling = Physics2D.OverlapBox(ceilingCheck.position, ceilingSquareCheck * transform.localScale.y, 0, groundLayers) != null;
 
             isAttachCeiling = isTouchingCeiling && !isGrounded && Input.GetAxis("Jump") == 0;
 
@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
             }
 
-            if (Input.GetAxis("Jump") != 0 & (isGrounded || isWallSliding || isAttachCeiling))
+            if (Input.GetAxis("Jump") != 0 & (isGrounded || isWallSliding))
             {
                 Jump();
             }
@@ -112,14 +112,17 @@ public class PlayerMovement : MonoBehaviour
                 sprite.transform.rotation = Quaternion.Euler(180, 0, 0);
             } else if (isWallSliding)
             {
-                sprite.transform.rotation = Quaternion.Euler(0, 0, -90 * transform.localScale.x);
+                sprite.transform.rotation = Quaternion.Euler(0, 0, -90 * Mathf.Sign(transform.localScale.x));
             } else
             {
                 sprite.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             isFalling = !isGrounded && !isWallSliding && !isAttachCeiling && rb.velocity.y < 0.3f;
-            transform.localScale = new Vector3(hInput > 0 ? -1 : hInput < 0 ? 1 : transform.localScale.x, 1, 1);
+            transform.localScale = 
+                new Vector3(hInput > 0 ? -Mathf.Abs(transform.localScale.x) : hInput < 0 ? Mathf.Abs(transform.localScale.x) : transform.localScale.x, 
+                transform.localScale.y, 
+                transform.localScale.z);
         }
     }
 
@@ -134,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
                 pa.TriggerJump();
             } else
             {
-                rb.velocity = Vector2.up * (jumpForce / 2);
+                rb.velocity = Vector2.up * (jumpForce / 1.5f);
             }
             StartCoroutine(resetJumpAnim());
         }
@@ -191,7 +194,7 @@ public class PlayerMovement : MonoBehaviour
         float scaleDown = 1 - (sizeDownScale * multiplyer);
         float jumpDown = jumpDownScale * multiplyer;
 
-        sprite.transform.localScale = originalSpriteScale * scaleDown;
+        transform.localScale = originalSpriteScale * scaleDown;
         jumpForce = originalJumpForce - jumpDown;
     }
 }
