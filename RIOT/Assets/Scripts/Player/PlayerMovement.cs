@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             if (isAttachCeiling)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0);
-                rb.gravityScale = 0.45f;
+                rb.gravityScale = 0.15f;
             } else
             {
                 rb.gravityScale = 2;
