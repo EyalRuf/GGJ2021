@@ -190,7 +190,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void UpdateStatsBasedOnHPAndImprints()
     {
-        int multiplyer = 4 -pi.GetCurrPower();
+        int multiplyer = 4 - pi.GetCurrPower();
         float scaleDown = 1 - (sizeDownScale * multiplyer);
         float jumpDown = jumpDownScale * multiplyer;
 
