@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Imprint
   - Enemy
+  - Slime
   layers:
   - Default
   - TransparentFX
