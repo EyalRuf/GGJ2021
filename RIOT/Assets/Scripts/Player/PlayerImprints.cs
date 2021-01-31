@@ -151,6 +151,7 @@ public class PlayerImprints : MonoBehaviour
                         Destroy(imprint1);
                         imprint1UIImage.color = imprintOffColor;
                         imprint1 = null;
+                        pm.UpdateStatsBasedOnHPAndImprints();
 
                         heldTime1 = 0;
                         pb1.curr = 0;
@@ -195,6 +196,7 @@ public class PlayerImprints : MonoBehaviour
                         Destroy(imprint2);
                         imprint2UIImage.color = imprintOffColor;
                         imprint2 = null;
+                        pm.UpdateStatsBasedOnHPAndImprints();
 
                         heldTime2 = 0;
                         pb2.curr = 0;
@@ -239,6 +241,7 @@ public class PlayerImprints : MonoBehaviour
                         Destroy(imprint3);
                         imprint3UIImage.color = imprintOffColor;
                         imprint3 = null;
+                        pm.UpdateStatsBasedOnHPAndImprints();
 
                         heldTime3 = 0;
                         pb3.curr = 0;
@@ -283,6 +286,7 @@ public class PlayerImprints : MonoBehaviour
                         Destroy(imprint4);
                         imprint4UIImage.color = imprintOffColor;
                         imprint4 = null;
+                        pm.UpdateStatsBasedOnHPAndImprints();
 
                         heldTime4 = 0;
                         pb4.curr = 0;
