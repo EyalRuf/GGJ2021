@@ -86,9 +86,9 @@ public class PlayerMovement : MonoBehaviour
             isTouchingWall = Physics2D.OverlapBox(fontWallCheck.position, wallSquareCheck * transform.localScale.y, 0, groundLayers) != null;
             isTouchingCeiling = Physics2D.OverlapBox(ceilingCheck.position, ceilingSquareCheck * transform.localScale.y, 0, groundLayers) != null;
 
-            isAttachCeiling = isTouchingCeiling && !isGrounded && Input.GetAxis("Jump") == 0;
+            isAttachCeiling = isTouchingCeiling && !isGrounded;
 
-            if (isAttachCeiling)
+            if (isAttachCeiling && (!Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.DownArrow)))
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.gravityScale = 0.15f;
