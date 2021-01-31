@@ -49,6 +49,9 @@ TagManager:
   - name: FG
     uniqueID: 1438072025
     locked: 0
+  - name: Torches
+    uniqueID: 2904932221
+    locked: 0
   - name: Player
     uniqueID: 1604891237
     locked: 0

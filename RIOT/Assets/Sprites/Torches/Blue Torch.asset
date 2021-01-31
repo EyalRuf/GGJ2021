@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Blue Torch
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -3001210338376354503, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: 6104860153135458577, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: -6668252135709964881, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: 105591140031530488, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: 1244636137558620395, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: 6070663457391572260, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: 8609267563628932599, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: -6278468832482122651, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: -971186005935388577, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: 5709133434022788178, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: -7733774229728894686, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: 1600674486419819670, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: -2314347949628724536, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: 5877619489177133873, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: -4471505879467607467, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: 2241863226207029730, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: 3643963990667430622, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  - {fileID: -8029121758606746840, guid: cda2a88492b3a394c956d92463053cfe, type: 3}
+  m_MinSpeed: 12
+  m_MaxSpeed: 12
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
