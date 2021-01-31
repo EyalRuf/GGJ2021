@@ -470,4 +470,39 @@ public class PlayerImprints : MonoBehaviour
     {
         return HP - GetImprintsUsed();
     }
+
+    public void Heal()
+    {
+        HP++;
+        if (isImp1Dead)
+        {
+            imprint1UIImage.color = imprintOffColor;
+            imprint1 = null;
+            isImp1Dead = false;
+            imprint1UI_GO.SetActive(true);
+        }
+        else if (isImp2Dead)
+        {
+            imprint2UIImage.color = imprintOffColor;
+            imprint2 = null;
+            isImp2Dead = false;
+            imprint2UI_GO.SetActive(true);
+        }
+        else if (isImp3Dead)
+        {
+            imprint3UIImage.color = imprintOffColor;
+            imprint3 = null;
+            isImp3Dead = false;
+            imprint3UI_GO.SetActive(true);
+        }
+        else if (isImp4Dead)
+        {
+            imprint4UIImage.color = imprintOffColor;
+            imprint4 = null;
+            isImp4Dead = false;
+            imprint4UI_GO.SetActive(true);
+        }
+
+        pm.UpdateStatsBasedOnHPAndImprints();
+    }
 }
