@@ -43,6 +43,11 @@ public class PlayerMovement : MonoBehaviour
     Vector3 originalSpriteScale;
     float originalJumpForce;
 
+    [Header("Checks")]
+    public Vector2 groundSquareCheck;
+    public Vector2 wallSquareCheck;
+    public Vector2 ceilingSquareCheck;
+
     void Start()
     {
         originalSpriteScale = new Vector3(sprite.transform.localScale.x, sprite.transform.localScale.y, sprite.transform.localScale.z);
@@ -75,20 +80,11 @@ public class PlayerMovement : MonoBehaviour
         { 
             hInput = Input.GetAxis("Horizontal");
 
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayers);
+            isGrounded = Physics2D.OverlapBox(groundCheck.position, groundSquareCheck, 0, groundLayers) != null;
+            isTouchingWall = Physics2D.OverlapBox(fontWallCheck.position, wallSquareCheck, 0, groundLayers) != null;
+            isTouchingCeiling = Physics2D.OverlapBox(ceilingCheck.position, ceilingSquareCheck, 0, groundLayers) != null;
 
-            isTouchingWall = Physics2D.OverlapCircle(fontWallCheck.position, checkRadius, groundLayers);
-            isWallSliding = isTouchingWall && !isGrounded;
-
-            if (isWallSliding)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
-            } else
-            {
-            }
-
-            isTouchingCeiling = Physics2D.OverlapCircle(ceilingCheck.position, checkRadius, groundLayers);
-            isAttachCeiling = isTouchingCeiling && !isWallSliding && !isGrounded && Input.GetAxis("Jump") == 0;
+            isAttachCeiling = isTouchingCeiling && !isGrounded && Input.GetAxis("Jump") == 0;
 
             if (isAttachCeiling)
             {
@@ -99,11 +95,17 @@ public class PlayerMovement : MonoBehaviour
                 rb.gravityScale = 2;
             }
 
+            isWallSliding = isTouchingWall && !isGrounded && !isAttachCeiling;
+
+            if (isWallSliding)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue));
+            }
+
             if (Input.GetAxis("Jump") != 0 & (isGrounded || isWallSliding || isAttachCeiling))
             {
                 Jump();
             }
-
 
             if (isAttachCeiling)
             {
@@ -125,9 +127,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!justJumped)
         {
-            rb.velocity = Vector2.up * jumpForce;
-            justJumped = true;
-            pa.TriggerJump();
+            if (isGrounded)
+            {
+                rb.velocity = Vector2.up * jumpForce;
+                justJumped = true;
+                pa.TriggerJump();
+            } else
+            {
+                rb.velocity = Vector2.up * (jumpForce / 2);
+            }
             StartCoroutine(resetJumpAnim());
         }
     }
