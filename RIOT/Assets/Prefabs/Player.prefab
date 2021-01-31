@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209423192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0.453, z: 0}
+  m_LocalPosition: {x: -0.06, y: 0.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8403373348501270769}
@@ -185,7 +185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8195804239275768876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -0.637, z: 0}
+  m_LocalPosition: {x: -0.09, y: -0.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8403373348501270769}
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8403373348501270769}
-  - component: {fileID: 8403373348501270771}
+  - component: {fileID: 4257217847974890397}
   - component: {fileID: 8403373348501270770}
   - component: {fileID: 8403373348501270772}
   - component: {fileID: 7181476565197961683}
@@ -232,8 +232,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &8403373348501270771
-BoxCollider2D:
+--- !u!58 &4257217847974890397
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -245,19 +245,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012092352, y: -0.028590202}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.89, y: 1.45}
-    newSize: {x: 1.28, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.1321683, y: 0.9154053}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!50 &8403373348501270770
 Rigidbody2D:
   serializedVersion: 4
@@ -297,7 +287,7 @@ MonoBehaviour:
   pa: {fileID: 1768078562790363171}
   locked: 0
   rb: {fileID: 8403373348501270770}
-  speed: 12.5
+  speed: 10
   hInput: 0
   isFalling: 0
   jumpForce: 15
@@ -309,17 +299,17 @@ MonoBehaviour:
   isGrounded: 0
   justJumped: 0
   fontWallCheck: {fileID: 2024649827}
-  wallSlidingSpeed: 0
+  wallSlidingSpeed: 0.25
   isWallSliding: 0
   ceilingCheck: {fileID: 209423193}
   isAttachCeiling: 0
   isBumped: 0
-  bumpSpeed: 5.5
-  jumpDownScale: 1.25
+  bumpSpeed: 14
+  jumpDownScale: 0.75
   sizeDownScale: 0.125
-  groundSquareCheck: {x: 0.85, y: 0}
-  wallSquareCheck: {x: 0, y: 0.85}
-  ceilingSquareCheck: {x: 0.85, y: 0}
+  groundSquareCheck: {x: 0.5, y: 0}
+  wallSquareCheck: {x: 0, y: 0.5}
+  ceilingSquareCheck: {x: 0.5, y: 0}
 --- !u!114 &7181476565197961683
 MonoBehaviour:
   m_ObjectHideFlags: 0
