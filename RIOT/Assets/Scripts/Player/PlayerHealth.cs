@@ -25,6 +25,14 @@ public class PlayerHealth : MonoBehaviour
                 }
             }
         }
+        if (collision.tag == "Slime")
+        {
+            if (pi.HP < 4)
+            {
+                pi.Heal();
+                Destroy(collision.gameObject);
+            }
+        }   
     }
 
     public void EndDamageSequence()
