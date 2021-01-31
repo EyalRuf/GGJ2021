@@ -7,14 +7,10 @@ Use your slimey movement & your remnants as breadcrumbs and checkpoints.
 
 Created by:
 
-  Michelle Pfeifer
-
-  Stanislav Uzunov
-
-  Eyal Rufeisen
-
-  Janine Fennema
-
-  Vismaya Menon
+  -Michelle Pfeifer
+  -Stanislav Uzunov
+  -Eyal Rufeisen
+  -Janine Fennema
+  -Vismaya Menon
 
 ![game picture](https://media.discordapp.net/attachments/800337577184854059/805417960722006056/splash_screen.png?width=1191&height=670)
